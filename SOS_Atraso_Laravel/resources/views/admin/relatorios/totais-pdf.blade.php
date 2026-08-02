@@ -1,0 +1,1 @@
+<!doctype html><html><head><meta charset="utf-8"><style>body{font-family:DejaVu Sans}table{width:100%;border-collapse:collapse}th,td{border:1px solid #555;padding:8px}</style></head><body><h1>Total de atrasos por turma</h1><table><tr><th>Turma</th><th>Total</th></tr>@foreach($totais as $t)<tr><td>{{$t->turma}}</td><td>{{$t->total}}</td></tr>@endforeach</table></body></html>

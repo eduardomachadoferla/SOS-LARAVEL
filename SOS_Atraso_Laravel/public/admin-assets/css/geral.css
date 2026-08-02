@@ -1,0 +1,115 @@
+* { box-sizing: border-box; }
+
+.admin-header {
+    min-height: 88px;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    padding: 0 28px;
+    background: #002f5d;
+}
+
+.admin-header .brand-logo { width: 250px; max-width: 24vw; height: auto; }
+.admin-header .brand-title { display: flex; align-items: center; white-space: nowrap; }
+.admin-header .menu { margin-left: auto; display: flex; align-items: center; justify-content: flex-end; gap: 14px; width: auto; padding: 0; list-style: none; }
+.admin-header .menu li { margin: 0; }
+.admin-header .menu a,
+.admin-header .menu button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 36px;
+    padding: 8px 20px;
+    border: 0;
+    border-radius: 8px;
+    background: #1c95ce;
+    color: #fff;
+    font: 600 14px Arial, sans-serif;
+    text-decoration: none;
+    box-shadow: 0 5px 10px rgba(0,0,0,.22);
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.admin-main { width: 100%; padding: 26px 16px 50px; }
+.admin-card {
+    width: min(1036px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 24px 22px;
+    border-radius: 8px;
+    background: #fff;
+}
+.admin-title { margin: 0 0 22px; text-align: center; color: #063664; font: 900 24px Arial, sans-serif; }
+
+/* Neutraliza regras antigas que deixavam os formulários absolutos. */
+.admin-card .formulario,
+.admin-toolbar,
+.report-filters {
+    position: static !important;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    width: 100%;
+    margin: 0 0 22px;
+}
+
+.admin-search { display: flex; flex: 1 1 390px; gap: 0; min-width: 260px; }
+.admin-search input { flex: 1 1 auto; min-width: 0; margin: 0; border-radius: 6px 0 0 6px; }
+.admin-search button { border-radius: 0 7px 7px 0; }
+.admin-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    padding: 10px 22px;
+    border: 0;
+    border-radius: 7px;
+    background: #1c95ce;
+    color: #fff;
+    font: 500 14px Arial, sans-serif;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,.18);
+    cursor: pointer;
+    white-space: nowrap;
+}
+.admin-btn-dark { background: #063664; }
+.admin-btn-danger { color: #e11d2e; background: transparent; box-shadow: none; padding: 4px 6px; min-height: auto; }
+
+.import-form { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-bottom: 22px; }
+.import-form input[type=file] { width: min(100%, 420px); margin: 0; padding: 8px; border: 1px solid #aab4c1; border-radius: 6px; background: #fff; }
+
+.table-wrap { width: 100%; overflow-x: auto; }
+.admin-table { width: 100%; min-width: 650px; margin: 0 0 20px; border-collapse: collapse; font-family: Arial, sans-serif; text-align: left; }
+.admin-table th, .admin-table td { padding: 12px 14px; border: 1px solid #ddd; vertical-align: middle; }
+.admin-table th { background: #f2f2f2; color: #333; white-space: nowrap; }
+.admin-table tr:nth-child(even) { background: #f9f9f9; }
+.admin-table tr:hover { background: #f1f1f1; }
+.actions-cell { display: flex; align-items: center; gap: 8px; white-space: nowrap; }
+.actions-cell form { margin: 0; }
+
+.report-filters .date-group { display: flex; align-items: center; gap: 9px; flex: 1 1 320px; }
+.report-filters input[type=date] { width: 150px; margin: 0; }
+.report-filters select { flex: 1 1 300px; min-width: 240px; margin: 0; }
+.report-actions { display: flex; justify-content: center; margin-top: 22px; }
+
+.alert { position: fixed; top: 20px; right: 20px; padding: 15px 20px; border-radius: 8px; font-size: 16px; box-shadow: 0 4px 6px rgba(0,0,0,.1); opacity: .95; transition: opacity 1s ease, transform .5s ease; z-index: 9999; }
+.alert-success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+.alert-error { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+.alert-hide { opacity: 0; transform: translateY(-20px); }
+
+@media (max-width: 1050px) {
+    .admin-header { flex-wrap: wrap; padding: 12px 20px; gap: 12px; }
+    .admin-header .brand-logo { max-width: 230px; }
+    .admin-header .menu { order: 3; width: 100%; justify-content: center; flex-wrap: wrap; }
+}
+@media (max-width: 700px) {
+    .admin-header .brand-logo { max-width: 190px; }
+    .admin-header .brand-title { font-size: 24px; }
+    .admin-main { padding: 18px 8px 35px; }
+    .admin-card { width: 100%; padding: 20px 14px; }
+    .admin-search { flex-basis: 100%; }
+    .report-filters .date-group { flex-wrap: wrap; }
+    .report-filters input[type=date], .report-filters select, .admin-btn { width: 100%; }
+}
